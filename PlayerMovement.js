@@ -32,7 +32,8 @@ function Update () {
  //animator.SetBool("Hugging", false);
 
 
-if(Input.GetKey(moveLeft)){
+
+if(Input.GetKey(moveLeft) && Input.GetKey(moveRight)){
 //transform.Translate(Vector3.left*speed);
 //animator.SetFloat("Speed", -100)
 //Debug.Log("left");
@@ -41,14 +42,14 @@ if(Input.GetKey(moveLeft)){
 
 }
 
+else if(Input.GetKey(moveLeft)){
+   animator.SetTrigger("P1LeftArm");
+
+}
+
 else if(Input.GetKey(moveRight)){
-//transform.Translate(Vector3.right*speed);
- animator.SetBool("Hugging", true);
-   animator.SetBool("HugState", true);
-//animator.SetFloat("Speed", 100);
-//Debug.Log("right");
-
-
+  animator.SetTrigger("P1RightArm");
+ // Debug.Log("Right arm!!");
 }
 
 //
@@ -68,6 +69,8 @@ else{
 
 animator.SetBool("Hugging", false);
 animator.SetBool("HugState", false);
+//animator.SetTrigger("P1RighArm");
+//animator.SetTrigger("P1LeftArm");
 //speed = 0;
 //animator.SetFloat("Speed", 0);
 
