@@ -33,7 +33,7 @@ function Update () {
 
 
 
-if(Input.GetKey(moveLeft) && Input.GetKey(moveRight)){
+if(Input.GetKeyDown(moveLeft) && Input.GetKey(moveRight)){
 //transform.Translate(Vector3.left*speed);
 //animator.SetFloat("Speed", -100)
 //Debug.Log("left");
@@ -42,15 +42,40 @@ if(Input.GetKey(moveLeft) && Input.GetKey(moveRight)){
 
 }
 
-else if(Input.GetKey(moveLeft)){
+else if(Input.GetKeyDown(moveLeft)){
    animator.SetTrigger("P1LeftArm");
 
 }
 
-else if(Input.GetKey(moveRight)){
+else if(Input.GetKey(moveLeft)){
+   animator.SetBool("LKeyDown", true);
+
+}
+
+else if(Input.GetKeyDown(moveRight)){
   animator.SetTrigger("P1RightArm");
  // Debug.Log("Right arm!!");
 }
+
+else if(Input.GetKey(moveRight)){
+   animator.SetBool("RKeyDown", true);
+
+}
+
+
+else if(Input.GetKeyUp(moveLeft)){
+   animator.SetBool("LKeyDown", false);
+  // Debug.Log("left key up");
+
+}
+
+else if(Input.GetKeyUp(moveRight)){
+   animator.SetBool("RKeyDown", false);
+  // Debug.Log("left key up");
+
+}
+
+
 
 //
 //else if(Input.GetKey(shoot)){
