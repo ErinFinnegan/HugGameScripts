@@ -20,6 +20,7 @@ waitTime = Time.time;
 	transform.Translate(Vector3.right*speed);
 	//Debug.Log("left!");
 	
+	//var distance = Vector3.Distance(object1.transform.position, object2.transform.position);
 //	Debug.Log(Vector2);
 //	Debug.Log("Huggee pos = " + this.transform.position[0]);
 	
