@@ -1,6 +1,8 @@
 ﻿
 #pragma strict
 
+
+
 var moveLeft : KeyCode;
 var moveRight: KeyCode;
 
@@ -19,12 +21,13 @@ animator.GetComponent(Animator);
 
 
 function Start () {
-
+//this.transform.position[0]
 
 }
 
 function Update () {
 
+//Debug.Log("Player1 position = " + this.transform.position[0]);
 
 //Maybe I need to declare a boolean??
 //boolean Hugging = Input.Get___SOMETHING?
