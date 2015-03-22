@@ -1,7 +1,7 @@
 ﻿
 #pragma strict
 
-
+//public var HugState : string;
 
 var moveLeft : KeyCode;
 var moveRight: KeyCode;
@@ -12,9 +12,11 @@ var shoot: KeyCode;
 var shootTime : float = 0;
 
 
-var fireball : GameObject;
+public var fireball : GameObject;
 
-var animator : Animator;
+public var HugState : boolean = false;
+
+public var animator : Animator;
 
 animator.GetComponent(Animator);
 //animator.GetComponentInChildren(Animator);
@@ -42,6 +44,7 @@ if(Input.GetKeyDown(moveLeft) && Input.GetKey(moveRight)){
 //Debug.Log("left");
  animator.SetBool("Hugging", true);
   animator.SetBool("HugState", true);
+  Debug.Log("Proper Hug!!!");
 
 }
 

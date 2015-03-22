@@ -1,5 +1,10 @@
 ﻿#pragma strict
 
+
+public var PlayerObject: GameObject;
+
+private var playerMovement : PlayerMovement;
+
 var speed :  float= 3;
 //var p : Vector3;
 var waitTime = 0;
@@ -14,9 +19,14 @@ animator.GetComponent(Animator);
 
 //var distance = Vector3.Distance(playerOne.transform.position, this.transform.position);
 
-function Start () {
+function Awake (){
 
-//  PlayerMovement = GetComponent(PlayerMovement);
+	playerMovement = GetComponent(PlayerMovement);
+
+}
+
+
+function Start () {
 
 }
 
@@ -29,13 +39,16 @@ waitTime = Time.time;
 
 
  if(waitTime > 2) {
+ 
+ 
+ 	Debug.Log("Hug State of P1 = " + playerMovement.animator);
 
 	transform.Translate(Vector3.right*speed);
 	//Debug.Log("left!");
 	
 	//var distance = Vector3.Distance(object1.transform.position, object2.transform.position);
 //	Debug.Log(Vector2);
-   Debug.Log("Huggee pos = " + this.transform.position[0]);
+  // Debug.Log("Huggee pos = " + this.transform.position[0]);
 	
 	if(this.transform.position[0] > 10 || this.transform.position[0] < -10) {
 	speed*=-1;
