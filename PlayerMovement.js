@@ -14,11 +14,12 @@ var shootTime : float = 0;
 
 public var fireball : GameObject;
 
-public var HugState : boolean = false;
+static var HugState : boolean = false;
 
 public var animator : Animator;
 
-animator.GetComponent(Animator);
+animator.GetBool("HugState");
+//animator.GetComponent(Animator);
 //animator.GetComponentInChildren(Animator);
 
 
@@ -36,14 +37,14 @@ function Update () {
 
  //animator.SetBool("Hugging", false);
 
-
+ animator.SetBool("HugState", HugState);
 
 if(Input.GetKeyDown(moveLeft) && Input.GetKey(moveRight)){
 //transform.Translate(Vector3.left*speed);
 //animator.SetFloat("Speed", -100)
 //Debug.Log("left");
  animator.SetBool("Hugging", true);
-  animator.SetBool("HugState", true);
+ HugState = true;
   Debug.Log("Proper Hug!!!");
 
 }

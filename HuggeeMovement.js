@@ -3,7 +3,7 @@
 
 public var PlayerObject: GameObject;
 
-private var playerMovement : PlayerMovement;
+public var playerMovement : PlayerMovement;
 
 var speed :  float= 3;
 //var p : Vector3;
@@ -21,7 +21,7 @@ animator.GetComponent(Animator);
 
 function Awake (){
 
-	playerMovement = GetComponent(PlayerMovement);
+//	playerMovement = GetComponent(PlayerMovement);
 
 }
 
@@ -41,7 +41,7 @@ waitTime = Time.time;
  if(waitTime > 2) {
  
  
- 	Debug.Log("Hug State of P1 = " + playerMovement.animator);
+  //  Debug.Log("Hug State of P1 = " + PlayerMovement.HugState);
 
 	transform.Translate(Vector3.right*speed);
 	//Debug.Log("left!");
@@ -55,7 +55,7 @@ waitTime = Time.time;
 
 	}
 
-	if(this.transform.position[0] >= -0.5 && this.transform.position[0] <= 1 ){
+	if(this.transform.position[0] >= -0.5 && this.transform.position[0] <= 1 && PlayerMovement.HugState == true ){
 	//&& playerOne.HugState == true
 	  animator.SetBool("GotHug", true);
 	} else {
