@@ -13,7 +13,7 @@ function Update () {
 waitTime = Time.time;
 
 
- if(waitTime > 5) {
+ if(waitTime > 2) {
  
 	transform.Translate(Vector3.left*speed);
 	//Debug.Log("left!");

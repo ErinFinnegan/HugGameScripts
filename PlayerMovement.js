@@ -8,9 +8,20 @@ var moveRight: KeyCode;
 
 var speed: float=1;
 
+static var damageAudio: AudioSource;  //today
+var respawnAudio: AudioSource;   //today
+
+
+static var currentRep=10;   //rep replaces hearts.  "rep" is your reputation
+var rep: GameObject;
+static var repBar: GameObject[];
+
 var shoot: KeyCode;
 var shootTime : float = 0;
 
+
+var jumpAudio: AudioSource;
+jumpAudio = GetComponent(AudioSource);  //for Unity 5 only?
 
 public var fireball : GameObject;
 
@@ -25,10 +36,21 @@ animator.GetBool("HugState");
 
 function Start () {
 //this.transform.position[0]
+	var audioSources = GetComponents(AudioSource);
+	damageAudio = audioSources[0];
+	respawnAudio = audioSources[1];
+
+	Spawn();
 
 }
 
+	
+//	SpawnHealth();  //from last week
+
+
 function Update () {
+
+var currentRep=10; 
 
 //Debug.Log("Player1 position = " + this.transform.position[0]);
 
@@ -46,6 +68,12 @@ if(Input.GetKeyDown(moveLeft) && Input.GetKey(moveRight)){
  animator.SetBool("Hugging", true);
  HugState = true;
   Debug.Log("Proper Hug!!!");
+  
+  if(!jumpAudio.isPlaying){ //if it isn't already playing
+  
+  jumpAudio.Play();
+  
+  }
 
 }
 
@@ -118,3 +146,33 @@ speed*=-1;
 }
 
 }
+
+function Spawn(){
+
+for(var i: int=0; i < currentRep; i++){
+
+Instantiate(rep, Vector3(i*1.5-6.5, 4, 0), Quaternion.identity); 
+
+}
+
+repBar = GameObject.FindGameObjectsWithTag("Reputation");
+
+
+}
+
+
+
+static function Damage(){
+
+Destroy(repBar[currentRep-1]);
+currentRep -= 1;
+
+}
+
+//function SpawnHealth(){
+//   The health spawning function from last week's class
+//}
+
+//static function Damage(){
+// the damage function from last week
+//}
