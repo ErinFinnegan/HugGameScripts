@@ -6,24 +6,21 @@
 var moveLeft : KeyCode;
 var moveRight: KeyCode;
 
-var speed: float=1;
+
 
 static var damageAudio: AudioSource;  //today
 var respawnAudio: AudioSource;   //today
 
 
-static var currentRep=10;   //rep replaces hearts.  "rep" is your reputation
+static var currentRep=3;   //rep replaces hearts.  "rep" is your reputation
 var rep: GameObject;
 static var repBar: GameObject[];
 
-var shoot: KeyCode;
-var shootTime : float = 0;
 
 
-var jumpAudio: AudioSource;
-jumpAudio = GetComponent(AudioSource);  //for Unity 5 only?
+//var jumpAudio: AudioSource;
+//jumpAudio = GetComponent(AudioSource);  //for Unity 5 only?
 
-public var fireball : GameObject;
 
 static var HugState : boolean = false;
 
@@ -36,9 +33,9 @@ animator.GetBool("HugState");
 
 function Start () {
 //this.transform.position[0]
-	var audioSources = GetComponents(AudioSource);
-	damageAudio = audioSources[0];
-	respawnAudio = audioSources[1];
+	//var audioSources = GetComponents(AudioSource);
+	//damageAudio = audioSources[0];
+	//respawnAudio = audioSources[1];
 
 	Spawn();
 
@@ -68,12 +65,15 @@ if(Input.GetKeyDown(moveLeft) && Input.GetKey(moveRight)){
  animator.SetBool("Hugging", true);
  HugState = true;
   Debug.Log("Proper Hug!!!");
+  currentRep = currentRep + 1;
   
-  if(!jumpAudio.isPlaying){ //if it isn't already playing
+  //currentHealth = currentHealth+1;
   
-  jumpAudio.Play();
+  //if(!jumpAudio.isPlaying){ //if it isn't already playing
   
-  }
+  //jumpAudio.Play();
+  
+  //}
 
 }
 
@@ -137,15 +137,7 @@ animator.SetBool("HugState", false);
 }
 }
 
-function OnCollisionEnter2D(coll : Collision2D){
-if(coll.gameObject.tag == "Wall"){
 
-Debug.Log("wall!");
-
-speed*=-1;
-}
-
-}
 
 function Spawn(){
 
