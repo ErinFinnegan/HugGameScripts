@@ -77,27 +77,27 @@ if(Input.GetKeyDown(moveLeft) && Input.GetKey(moveRight)){
 
 }
 
-else if(Input.GetKeyDown(moveLeft)){
-   animator.SetTrigger("P1LeftArm");
+//else if(Input.GetKeyDown(moveLeft)){
+ //  animator.SetTrigger("P1LeftArm");
 
-}
+//}
 
 else if(Input.GetKey(moveLeft)){
    animator.SetBool("LKeyDown", true);
 
 }
 
-else if(Input.GetKeyDown(moveRight)){
-  animator.SetTrigger("P1RightArm");
+//else if(Input.GetKeyDown(moveRight)){
+//  animator.SetTrigger("P1RightArm");
  // Debug.Log("Right arm!!");
-}
+//}
 
 else if(Input.GetKey(moveRight)){
    animator.SetBool("RKeyDown", true);
 
 }
 
-
+/*
 else if(Input.GetKeyUp(moveLeft)){
    animator.SetBool("LKeyDown", false);
   // Debug.Log("left key up");
@@ -109,7 +109,7 @@ else if(Input.GetKeyUp(moveRight)){
   // Debug.Log("left key up");
 
 }
-
+*/
 
 
 //
@@ -126,9 +126,10 @@ else if(Input.GetKeyUp(moveRight)){
 //}
 
 else{
-
-animator.SetBool("Hugging", false);
-animator.SetBool("HugState", false);
+animator.SetBool("LKeyDown", false);
+animator.SetBool("RKeyDown", false);
+//animator.SetBool("Hugging", false);
+//animator.SetBool("HugState", false);
 //animator.SetTrigger("P1RighArm");
 //animator.SetTrigger("P1LeftArm");
 //speed = 0;
