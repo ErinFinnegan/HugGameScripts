@@ -6,7 +6,7 @@
 var moveLeft : KeyCode;
 var moveRight: KeyCode;
 
-
+var DoTheyLikeHugs: UnityEngine.GameObject[];
 
 static var damageAudio: AudioSource;  //today
 var respawnAudio: AudioSource;   //today
@@ -15,11 +15,6 @@ var respawnAudio: AudioSource;   //today
 static var currentRep=3;   //rep replaces hearts.  "rep" is your reputation
 var rep: GameObject;
 static var repBar: GameObject[];
-
-
-
-//var jumpAudio: AudioSource;
-//jumpAudio = GetComponent(AudioSource);  //for Unity 5 only?
 
 
 static var HugState : boolean = false;
@@ -32,113 +27,58 @@ animator.GetBool("HugState");
 
 
 function Start () {
-//this.transform.position[0]
-	//var audioSources = GetComponents(AudioSource);
-	//damageAudio = audioSources[0];
-	//respawnAudio = audioSources[1];
 
 	Spawn();
+	  Debug.Log("HugState on Spawn = " + HugState);
+   DoTheyLikeHugs = GameObject.FindGameObjectsWithTag("DoesNotLikeHugs");
+  Debug.Log("Do they like hugs? " + DoTheyLikeHugs);
 
 }
-
-	
-//	SpawnHealth();  //from last week
 
 
 function Update () {
 
 var currentRep=10; 
 
-//Debug.Log("Player1 position = " + this.transform.position[0]);
-
-//Maybe I need to declare a boolean??
-//boolean Hugging = Input.Get___SOMETHING?
-
- //animator.SetBool("Hugging", false);
-
- animator.SetBool("HugState", HugState);
 
 if(Input.GetKeyDown(moveLeft) && Input.GetKey(moveRight)){
-//transform.Translate(Vector3.left*speed);
-//animator.SetFloat("Speed", -100)
-//Debug.Log("left");
+ Hug();
+}
+
+if(Input.GetKeyUp(moveLeft) && Input.GetKeyUp(moveRight)){
+ HugState = false;
+}
+
+
+ switch(HugState){
+ 
+   case true:
+//   	 Debug.Log("HugState is case true");
+   	 animator.SetBool("Hugging", true);
+   	 break;
+   	case false:
+//	  Debug.Log("HugState is case false");
+      break;
+   }
+
+
+
+
+}
+
+function Hug(){
  animator.SetBool("Hugging", true);
  HugState = true;
-  Debug.Log("Proper Hug!!!");
+ Debug.Log("Proper Hug!!! ");
   currentRep = currentRep + 1;
+
+  if (DoTheyLikeHugs == null){
+   Damage();
+   Debug.Log("Don't hug people who don't like it!!");
   
-  //currentHealth = currentHealth+1;
-  
-  //if(!jumpAudio.isPlaying){ //if it isn't already playing
-  
-  //jumpAudio.Play();
-  
-  //}
+  }
 
 }
-
-//else if(Input.GetKeyDown(moveLeft)){
- //  animator.SetTrigger("P1LeftArm");
-
-//}
-
-else if(Input.GetKey(moveLeft)){
-   animator.SetBool("LKeyDown", true);
-
-}
-
-//else if(Input.GetKeyDown(moveRight)){
-//  animator.SetTrigger("P1RightArm");
- // Debug.Log("Right arm!!");
-//}
-
-else if(Input.GetKey(moveRight)){
-   animator.SetBool("RKeyDown", true);
-
-}
-
-/*
-else if(Input.GetKeyUp(moveLeft)){
-   animator.SetBool("LKeyDown", false);
-  // Debug.Log("left key up");
-
-}
-
-else if(Input.GetKeyUp(moveRight)){
-   animator.SetBool("RKeyDown", false);
-  // Debug.Log("left key up");
-
-}
-*/
-
-
-//
-//else if(Input.GetKey(shoot)){
-//
-////animator.SetBoolean  ("Speed", -100)
-//
-////animator.SetBool(true);
-//
-//if(Time.time - shootTime > 0.15){
-//	Instantiate(fireball, transform.position, Quaternion.Euler(0, 0, 90));
-//	shootTime = Time.time;
-//}
-//}
-
-else{
-animator.SetBool("LKeyDown", false);
-animator.SetBool("RKeyDown", false);
-//animator.SetBool("Hugging", false);
-//animator.SetBool("HugState", false);
-//animator.SetTrigger("P1RighArm");
-//animator.SetTrigger("P1LeftArm");
-//speed = 0;
-//animator.SetFloat("Speed", 0);
-
-}
-}
-
-
 
 function Spawn(){
 
@@ -162,10 +102,3 @@ currentRep -= 1;
 
 }
 
-//function SpawnHealth(){
-//   The health spawning function from last week's class
-//}
-
-//static function Damage(){
-// the damage function from last week
-//}
