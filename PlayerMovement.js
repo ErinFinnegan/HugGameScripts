@@ -6,7 +6,9 @@
 var moveLeft : KeyCode;
 var moveRight: KeyCode;
 
-var DoTheyLikeHugs: UnityEngine.GameObject[];
+var WhoWantsHugs: int;
+
+
 
 static var damageAudio: AudioSource;  //today
 var respawnAudio: AudioSource;   //today
@@ -30,8 +32,6 @@ function Start () {
 
 	Spawn();
 	  Debug.Log("HugState on Spawn = " + HugState);
-   DoTheyLikeHugs = GameObject.FindGameObjectsWithTag("DoesNotLikeHugs");
-  Debug.Log("Do they like hugs? " + DoTheyLikeHugs);
 
 }
 
@@ -70,13 +70,14 @@ function Hug(){
  animator.SetBool("Hugging", true);
  HugState = true;
  Debug.Log("Proper Hug!!! ");
-  currentRep = currentRep + 1;
-
-  if (DoTheyLikeHugs == null){
-   Damage();
-   Debug.Log("Don't hug people who don't like it!!");
-  
-  }
+//  currentRep = currentRep + 1;
+ WhoWantsHugs = GameObject.FindGameObjectsWithTag("LikesHugs").Length;
+ Debug.Log("Who Wants Hugs?" + WhoWantsHugs);
+//  if (DoTheyLikeHugs = LikesHugs){
+//      Debug.Log("This person loves hugs!!");
+//  } else {
+//  	 Debug.Log("This person hates hugs!!");
+//  }
 
 }
 
