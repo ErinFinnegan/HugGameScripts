@@ -69,15 +69,15 @@ if(Input.GetKeyUp(moveLeft) && Input.GetKeyUp(moveRight)){
 function Hug(){
  animator.SetBool("Hugging", true);
  HugState = true;
- Debug.Log("Proper Hug!!! ");
+ //Debug.Log("Proper Hug!!! ");
 //  currentRep = currentRep + 1;
  WhoWantsHugs = GameObject.FindGameObjectsWithTag("LikesHugs").Length;
- Debug.Log("Who Wants Hugs?" + WhoWantsHugs);
-//  if (DoTheyLikeHugs = LikesHugs){
-//      Debug.Log("This person loves hugs!!");
-//  } else {
-//  	 Debug.Log("This person hates hugs!!");
-//  }
+// Debug.Log("How many people want hugs " + WhoWantsHugs);
+   if (WhoWantsHugs > 0){
+      Debug.Log("This person loves hugs!!");
+  } else {
+   	 Debug.Log("This person hates hugs!!");
+  }
 
 }
 

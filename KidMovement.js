@@ -28,7 +28,7 @@ transform.Translate(Vector3.right* 0.05);
 	if(this.transform.position[0] >= -0.5 && this.transform.position[0] <= 1 && PlayerMovement.HugState == true ){
 	//&& playerOne.HugState == true
 //	  animator.SetBool("GotHug", true);
-	Debug.Log("You hugged this person!!");
+//	Debug.Log("You hugged this person!!");
 //		GotAHug = true;
 //	} else {
 //		animator.SetBool("GotHug", false);
