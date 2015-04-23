@@ -10,6 +10,7 @@ function Start () {
 
 
 spawnKid();
+//UpdateRep();
 
 
 
@@ -45,5 +46,12 @@ else{
 }
 
 
+//function AddRep (newRepValue : int) {
+//    currentRep += newRepValue;
+//    UpdateRep ();
+//}
 
+//function UpdateRep() {
+//    repText.text = "Score: " + currentRep;
+//}
 
