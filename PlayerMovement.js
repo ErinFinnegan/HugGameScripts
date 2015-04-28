@@ -31,7 +31,7 @@ animator.GetComponentInChildren(Animator);
 function Start () {
 
 	Spawn();
-	  Debug.Log("HugState on Spawn = " + HugState);
+	//  Debug.Log("HugState on Spawn = " + HugState);
 	  
 	   WhoWantsHug = GameObject.FindGameObjectsWithTag("LikesHugs");
 
@@ -79,7 +79,7 @@ function Hug(){
  //Debug.Log("Proper Hug!!! ");
 //  currentRep = currentRep + 1;
 // WhoWantsHug = GameObject.FindGameObjectsWithTag("LikesHugs");
- Debug.Log("How many people want hugs " + WhoWantsHug);
+// Debug.Log("How many people want hugs " + WhoWantsHug);
 //   if (GameObject.tag == "LikesHugs"){
 //      Debug.Log("This person loves hugs!! CurrentRep " + currentRep);
 //      currentRep += 1;
@@ -96,7 +96,7 @@ function Hug(){
 function StopHugging(){ 
    HugState = false;
    animator.SetBool("HugState", false);
-   Debug.Log("Stop freaking hugging");
+   //Debug.Log("Stop freaking hugging");
 }
 
 function Spawn(){

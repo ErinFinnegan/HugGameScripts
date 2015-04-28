@@ -1,7 +1,7 @@
 ﻿#pragma strict
 
 
-var KidTimer: int;
+static var KidTimer: int;
 
 //var GotAHug : boolean = false;
 static var GotAHug : boolean;
@@ -12,13 +12,20 @@ static var GotAHug : boolean;
 
 function Start() {
 
-KidTimer = Time.time;
+ // KidTimer = Time.time;
+
+//  Debug.Log("When the fuck is Start called");
 
 }
 
 function Update () {
 
-
+   KidTimer = Time.time;
+ 
+//   	Debug.Log("Time.time = " + Time.time);
+	Debug.Log("KidTimer in KidMovement = " + KidTimer);
+	
+	
 if(this.transform.position.x < 0){
 
 transform.Translate(Vector3.right* 0.05);
@@ -35,7 +42,6 @@ transform.Translate(Vector3.right* 0.05);
 	  // Debug.Log("You did not hug this person!!");
 	//   GotAHug = false;
 	//}
-	//Debug.Log("Begin the hugging countdown! KidTimer = " + KidTimer);
   	//KidTimer++;
 	//KidTimer = KidTimer + 1;
 //	Debug.Log("GotHug = " + animator.GotHug);
