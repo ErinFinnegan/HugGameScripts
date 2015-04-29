@@ -6,7 +6,8 @@
 //var moveLeft : KeyCode.LeftArrow;
 //var moveRight: KeyCode.RightArrow;
 
-var WhoWantsHug: GameObject[];
+//var WhoWantsHug: GameObject[];
+//var WhoWantsHug: int;
 
 
 
@@ -33,7 +34,7 @@ function Start () {
 	Spawn();
 	//  Debug.Log("HugState on Spawn = " + HugState);
 	  
-	   WhoWantsHug = GameObject.FindGameObjectsWithTag("LikesHugs");
+//	   WhoWantsHug = GameObject.FindGameObjectsWithTag("LikesHugs").Length;
 
 }
 
@@ -53,7 +54,7 @@ if(Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow)){
 // StopHugging();
 //}
 
-//Debug.Log("Your Current Rep is " + currentRep);
+Debug.Log("Your Current Rep is " + currentRep);
 
 // switch(HugState){
 // 
@@ -80,7 +81,7 @@ function Hug(){
 //  currentRep = currentRep + 1;
 // WhoWantsHug = GameObject.FindGameObjectsWithTag("LikesHugs");
 // Debug.Log("How many people want hugs " + WhoWantsHug);
-//   if (GameObject.tag == "LikesHugs"){
+//   if (WhoWantsHug > 0){
 //      Debug.Log("This person loves hugs!! CurrentRep " + currentRep);
 //      currentRep += 1;
 //      
@@ -103,7 +104,7 @@ function Spawn(){
 
 for(var i: int=0; i < currentRep; i++){
 
-Instantiate(rep, Vector3(i*1.5-6.5, 4, 0), Quaternion.identity); 
+  Instantiate(rep, Vector3(i*1.5-6.5, 4, 0), Quaternion.identity); 
 
 }
 

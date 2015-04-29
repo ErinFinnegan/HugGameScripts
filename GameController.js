@@ -29,7 +29,7 @@ KidTimer = Time.time;
 //KidTimer = KidMovement.KidTimer;
 
 //   	Debug.Log("Time.time = " + Time.time);
-	Debug.Log("KidTimer in KidMovement = " + KidTimer);
+//	Debug.Log("KidTimer in KidMovement = " + KidTimer);
 
 
 
@@ -68,10 +68,10 @@ function LateUpdate(){  //this didn't work... need to set some kind of time vari
 
 }
 
-//function AddRep (newRepValue : int) {
-//    currentRep += newRepValue;
+function AddRep (newRepValue : int) {
+    GetComponent(PlayerMovement).currentRep += newRepValue;
 //    UpdateRep ();
-//}
+}
 
 //function UpdateRep() {
 //    repText.text = "Score: " + currentRep;

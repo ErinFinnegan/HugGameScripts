@@ -6,12 +6,14 @@ static var KidTimer: int;
 //var GotAHug : boolean = false;
 static var GotAHug : boolean;
 
+var WhoWantsHug: int;
+
 //var animator : Animator;
 
 //animator.GetComponent(Animator);
 
 function Start() {
-
+   WhoWantsHug = GameObject.FindGameObjectsWithTag("LikesHugs").Length;
  // KidTimer = Time.time;
 
 //  Debug.Log("When the fuck is Start called");
@@ -20,7 +22,7 @@ function Start() {
 
 function Update () {
  
-   	Debug.Log("Time.time = " + Time.time);
+//   	Debug.Log("Time.time = " + Time.time);
 //	Debug.Log("KidTimer in KidMovement = " + KidTimer);
 	
 	
@@ -66,10 +68,24 @@ if(GotAHug == false){
 
 
 if(this.transform.position.x > 13 || GotAHug == true){
-
+  RepFunction();
   Destroy(gameObject);
   PlayerMovement.HugState = false;
 
   }
 
+}
+
+
+function RepFunction(){
+  if (WhoWantsHug > 0){
+      Debug.Log("This person loves hugs!! CurrentRep " + GetComponent(PlayerMovement).currentRep);
+      GetComponent(PlayerMovement).currentRep += 1;
+      
+  } 
+  else {
+   	 Debug.Log("This person hates hugs!!  CurrentRep " + GetComponent(PlayerMovement).currentRep);
+   	 GetComponent(PlayerMovement).currentRep -= 1;
+   	 PlayerMovement.Damage();
+  }
 }
