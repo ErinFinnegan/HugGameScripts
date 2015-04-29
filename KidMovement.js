@@ -19,11 +19,9 @@ function Start() {
 }
 
 function Update () {
-
-   KidTimer = Time.time;
  
-//   	Debug.Log("Time.time = " + Time.time);
-	Debug.Log("KidTimer in KidMovement = " + KidTimer);
+   	Debug.Log("Time.time = " + Time.time);
+//	Debug.Log("KidTimer in KidMovement = " + KidTimer);
 	
 	
 if(this.transform.position.x < 0){
@@ -50,7 +48,7 @@ transform.Translate(Vector3.right* 0.05);
 
 
 
-if(Time.time - KidTimer > 10){
+if(Time.time - GetComponent(GameController).KidTimer > 10){
 
 transform.Translate(Vector3.right*0.05);
 

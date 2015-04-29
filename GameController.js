@@ -5,8 +5,8 @@ var gothKid: GameObject;
 var ponytailGirl: GameObject;
 static var DoTheyLikeHugs;
 var HuggeesOnScreen: int;
-//var KidTimer = int;
-var whatTimeIsIt: int;
+static var KidTimer: int;
+//var whatTimeIsIt: int;
 
 function Start () {
 
@@ -21,20 +21,25 @@ spawnKid();
 function Update(){
 
 HuggeesOnScreen = (GameObject.FindGameObjectsWithTag("LikesHugs").Length) + (GameObject.FindGameObjectsWithTag("DoesNotLikeHugs").Length);
+
+KidTimer = Time.time;
+
 //Debug.Log("Huggees on screen = " + HuggeesOnScreen);
 
 //KidTimer = KidMovement.KidTimer;
 
-//enemy.GetComponent(EnemyScript).Hit(damage)
+//   	Debug.Log("Time.time = " + Time.time);
+	Debug.Log("KidTimer in KidMovement = " + KidTimer);
 
-whatTimeIsIt = GetComponent(KidMovement).KidTimer;
+
 
 }
 
 function spawnKid(){
 
-var randInt: int = Random.Range(0, 3);
+var randInt: int = Random.Range(0, 5);
 
+GetComponent(KidMovement).GotAHug = false;
 
 if(randInt > 2){
   Instantiate(gothKid, Vector3(-13, 0, 0), Quaternion.identity);
@@ -57,7 +62,7 @@ else{
 
 function LateUpdate(){  //this didn't work... need to set some kind of time variable here after a kid is destroyed to spawn a new one
 
- if (HuggeesOnScreen == 0 && whatTimeIsIt > 4) {  //enemy.GetComponent(EnemyScript)
+ if (HuggeesOnScreen == 0 && KidTimer > 4) {  //enemy.GetComponent(EnemyScript)
   spawnKid();
   }
 
