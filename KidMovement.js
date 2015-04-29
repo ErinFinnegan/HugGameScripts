@@ -50,7 +50,10 @@ transform.Translate(Vector3.right* 0.05);
 
 
 
-if(Time.time - GetComponent(GameController).KidTimer > 10){
+if(GetComponent(GameController).KidTimer > 320){
+
+///Debug.Log("This is when the kid should move off screen");
+//Debug.Log("Time.time - GetComponent(GameController).KidTimer" + (Time.time - GetComponent(GameController).KidTimer));
 
 transform.Translate(Vector3.right*0.05);
 
@@ -67,14 +70,35 @@ if(GotAHug == false){
 
 
 
+
 if(this.transform.position.x > 13 || GotAHug == true){
+//  GetComponent(GameController).KidTimer = 0;
   RepFunction();
   Destroy(gameObject);
   PlayerMovement.HugState = false;
+  }  
+  
+  
+  
+// if(this.transform.position.x > 13 && GotAHug == false) {  
+//   DidntHugFunction();
+//   Destroy(gameObject);
+//  }
 
-  }
 
 }
+
+
+//function DidntHugFunction() {
+//  if (WhoWantsHug <= 0) {
+//    //this person hates hugs and you did well not to give them one
+//      GetComponent(PlayerMovement).currentRep += 1;    
+//  }   else {
+//    //this person liked hugs and you didn't give them one!
+//   	 GetComponent(PlayerMovement).currentRep -= 1;
+//   	 PlayerMovement.Damage();
+//  }
+//}
 
 
 function RepFunction(){

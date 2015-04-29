@@ -22,20 +22,22 @@ function Update(){
 
 HuggeesOnScreen = (GameObject.FindGameObjectsWithTag("LikesHugs").Length) + (GameObject.FindGameObjectsWithTag("DoesNotLikeHugs").Length);
 
-KidTimer = Time.time;
+KidTimer = KidTimer + 1;
 
 //Debug.Log("Huggees on screen = " + HuggeesOnScreen);
 
 //KidTimer = KidMovement.KidTimer;
 
 //   	Debug.Log("Time.time = " + Time.time);
-//	Debug.Log("KidTimer in KidMovement = " + KidTimer);
+	Debug.Log("KidTimer in KidMovement = " + KidTimer);
 
 
 
 }
 
 function spawnKid(){
+
+KidTimer = 0;
 
 var randInt: int = Random.Range(0, 5);
 
@@ -57,6 +59,7 @@ else{
 
 	
 	}
+	
 	
 }
 
