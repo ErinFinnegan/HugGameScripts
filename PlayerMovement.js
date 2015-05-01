@@ -54,7 +54,7 @@ if(Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow)){
 // StopHugging();
 //}
 
-Debug.Log("Your Current Rep is " + currentRep);
+//Debug.Log("Your Current Rep is " + currentRep);
 
 // switch(HugState){
 // 
@@ -101,7 +101,7 @@ function StopHugging(){
 }
 
 function Spawn(){
-
+Debug.Log("Your Current Rep on Spawnstate " + currentRep);
 for(var i: int=0; i < currentRep; i++){
 
   Instantiate(rep, Vector3(i*1.5-6.5, 4, 0), Quaternion.identity); 

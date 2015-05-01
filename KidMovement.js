@@ -8,12 +8,14 @@ static var GotAHug : boolean;
 
 var WhoWantsHug: int;
 
+static var LikesHugs: boolean = true;
+
 //var animator : Animator;
 
 //animator.GetComponent(Animator);
 
 function Start() {
-   WhoWantsHug = GameObject.FindGameObjectsWithTag("LikesHugs").Length;
+   //WhoWantsHug = GameObject.FindGameObjectsWithTag("LikesHugs").Length;
  // KidTimer = Time.time;
 
 //  Debug.Log("When the fuck is Start called");
@@ -57,22 +59,23 @@ if(GetComponent(GameController).KidTimer > 320){
 
 transform.Translate(Vector3.right*0.05);
 
-if(GotAHug == false){
- //Debug.Log("Lose some Rep!!");
- 
- } else {
- // Debug.Log("Rep goes up!!");
-
- }
 
 
 }
 
-
-
-
-if(this.transform.position.x > 13 || GotAHug == true){
+if(GotAHug == true){  //this is the working code
 //  GetComponent(GameController).KidTimer = 0;
+//  Debug.Log("Right before Rep gets called");
+  RepFunction();
+  Destroy(gameObject);
+  PlayerMovement.HugState = false;
+  }  
+  
+
+if(this.transform.position.x > 13){  
+//if(this.transform.position.x > 13 || GotAHug == true){  //this is the working code
+//  GetComponent(GameController).KidTimer = 0;
+//  Debug.Log("Right before Rep gets called");
   RepFunction();
   Destroy(gameObject);
   PlayerMovement.HugState = false;
@@ -102,14 +105,28 @@ if(this.transform.position.x > 13 || GotAHug == true){
 
 
 function RepFunction(){
-  if (WhoWantsHug > 0){
-      Debug.Log("This person loves hugs!! CurrentRep " + GetComponent(PlayerMovement).currentRep);
+  Debug.Log("Rep is called who wants hugs? " + LikesHugs);
+  if (LikesHugs == true && GotAHug == true){
+      Debug.Log("This person loves hugs and got one CurrentRep " + GetComponent(PlayerMovement).currentRep);
       GetComponent(PlayerMovement).currentRep += 1;
       
-  } 
-  else {
-   	 Debug.Log("This person hates hugs!!  CurrentRep " + GetComponent(PlayerMovement).currentRep);
-   	 GetComponent(PlayerMovement).currentRep -= 1;
-   	 PlayerMovement.Damage();
   }
-}
+ // else { // this did not work as an else statement!!
+ 
+ if (LikesHugs == false && GotAHug == false){
+   	 Debug.Log("This person hates hugs and was glad not to be hugged. CurrentRep " + GetComponent(PlayerMovement).currentRep);
+   	 GetComponent(PlayerMovement).currentRep += 1;
+   	 //PlayerMovement.Damage();
+  }
+  if (LikesHugs == true && GotAHug == false){
+      Debug.Log("This person wanted a hug and didn't get one " + GetComponent(PlayerMovement).currentRep);
+      GetComponent(PlayerMovement).currentRep -= 1;
+      
+  }
+  
+ if (LikesHugs == false && GotAHug == true){
+   	 Debug.Log("This person hates hugs and you gave them one anyway. CurrentRep " + GetComponent(PlayerMovement).currentRep);
+   	 GetComponent(PlayerMovement).currentRep -= 1;
+   	 //PlayerMovement.Damage();
+  }
+ }

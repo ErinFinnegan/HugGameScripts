@@ -7,6 +7,9 @@ static var DoTheyLikeHugs;
 var HuggeesOnScreen: int;
 static var KidTimer: int;
 //var whatTimeIsIt: int;
+var scoreText : GUIText;
+
+var skin : GUISkin;
 
 function Start () {
 
@@ -29,7 +32,7 @@ KidTimer = KidTimer + 1;
 //KidTimer = KidMovement.KidTimer;
 
 //   	Debug.Log("Time.time = " + Time.time);
-	Debug.Log("KidTimer in KidMovement = " + KidTimer);
+//	Debug.Log("KidTimer in KidMovement = " + KidTimer);
 
 
 
@@ -41,10 +44,12 @@ KidTimer = 0;
 
 var randInt: int = Random.Range(0, 5);
 
+
 GetComponent(KidMovement).GotAHug = false;
 
 if(randInt > 2){
   Instantiate(gothKid, Vector3(-13, 0, 0), Quaternion.identity);
+  KidMovement.LikesHugs = false;
   DoTheyLikeHugs = this.gothKid.tag;
  // Debug.Log("Do they like hugs tag = " + DoTheyLikeHugs);
 
@@ -55,6 +60,8 @@ else{
 	Instantiate(ponytailGirl, Vector3(-13, 0, 0), Quaternion.identity);
 	
 	DoTheyLikeHugs = this.ponytailGirl.tag;
+	 KidMovement.LikesHugs = true;
+
 //	Debug.Log("Do they like hugs = " + DoTheyLikeHugs);
 
 	
@@ -71,9 +78,20 @@ function LateUpdate(){  //this didn't work... need to set some kind of time vari
 
 }
 
+function OnGUI(){
+GUI.skin = skin;
+GUI.Label( new Rect (Screen.width/4, 3, 150, 150), "REP " + PlayerMovement.currentRep);
+
+}
+
 function AddRep (newRepValue : int) {
     GetComponent(PlayerMovement).currentRep += newRepValue;
 //    UpdateRep ();
+}
+
+
+function UpdateScore () {
+    scoreText.text = "Reputation: " + GetComponent(PlayerMovement).currentRep;
 }
 
 //function UpdateRep() {
