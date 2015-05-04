@@ -1,7 +1,7 @@
 ﻿#pragma strict
 
+//var newColor : Color = Color.white;
 var newColor : Color;
-
 
 function Start () {
 	// Make a game object
@@ -18,7 +18,7 @@ function Start () {
 	
 	newColor = light.color;
 	
-	Debug.Log("Light script ran!!");
+//	Debug.Log("Light script ran!!");
 }
 
 
@@ -32,17 +32,29 @@ function Update () {
 
 function ColorChanging(){
  
- var colorA = Color.green;
+ var colorA = Color.white;
  var colorB = Color.red;
+ var colorC = Color.gray;
+ var colorD = Color.blue;
  
  if(Input.GetKey(KeyCode.Alpha1)) { 
  newColor = colorA;
+ //	Debug.Log("You hit 1");
  }
  if(Input.GetKey(KeyCode.Alpha2)){ 
  newColor = colorB;
+  //	Debug.Log("You hit 2");
  }
  
- light.color = Color.Lerp(Light.color, newColor, Time.deltaTime * 2);  //2 is smoothing
+  if(Input.GetKey(KeyCode.Alpha3)) { 
+ newColor = colorC;
+ //	Debug.Log("You hit 1");
+ }
+ if(Input.GetKey(KeyCode.Alpha4)){ 
+ newColor = colorD;
+  //	Debug.Log("You hit 2");
+ }
+  light.color = Color.Lerp(light.color, newColor, Time.time);  //2 is smoothing
 
 
 }
