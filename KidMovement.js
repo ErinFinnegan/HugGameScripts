@@ -8,6 +8,9 @@ static var GotAHug : boolean;
 
 var WhoWantsHug: int;
 
+//var KidAnimator : Animator;
+
+
 static var LikesHugs: boolean = true;
 
 //var animator : Animator;
@@ -30,15 +33,15 @@ function Update () {
 	
 if(this.transform.position.x < 0){
 
-transform.Translate(Vector3.right* 0.05);
+transform.Translate(Vector3.right* 0.5);
 
 } else {
 
 	if(this.transform.position[0] >= -0.5 && this.transform.position[0] <= 1 && PlayerMovement.HugState == true ){
 	//&& playerOne.HugState == true
-//  animator.SetBool("GotHug", true);
 	Debug.Log("You hugged this person!!");
 		GotAHug = true;
+//	        KidAnimator.SetBool("HugBack", true);
 //	} else {
 //		animator.SetBool("GotHug", false);
 	  // Debug.Log("You did not hug this person!!");
@@ -52,12 +55,12 @@ transform.Translate(Vector3.right* 0.05);
 
 
 
-if(GetComponent(GameController).KidTimer > 320){
+if(GetComponent(GameController).KidTimer > 120){
 
 ///Debug.Log("This is when the kid should move off screen");
 //Debug.Log("Time.time - GetComponent(GameController).KidTimer" + (Time.time - GetComponent(GameController).KidTimer));
 
-transform.Translate(Vector3.right*0.05);
+transform.Translate(Vector3.right*0.5);
 
 
 
@@ -65,8 +68,10 @@ transform.Translate(Vector3.right*0.05);
 
 if(GotAHug == true){  //this is the working code
 //  GetComponent(GameController).KidTimer = 0;
-//  Debug.Log("Right before Rep gets called");
+//  Debug.Log("Right before Rep get called");
   RepFunction();
+ //     KidAnimator.SetBool("HugBack", false);
+ // animator.SetBool("GotHug", false);
   Destroy(gameObject);
   PlayerMovement.HugState = false;
   }  
@@ -79,6 +84,7 @@ if(this.transform.position.x > 13){
   RepFunction();
   Destroy(gameObject);
   PlayerMovement.HugState = false;
+ // animator.SetBool("GotHug", false);
   }  
   
   

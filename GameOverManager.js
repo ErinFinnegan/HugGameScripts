@@ -1,8 +1,8 @@
 ﻿
 //Script from:  http://unity3d.com/learn/tutorials/projects/survival-shooter/game-over
 
-//var playerHealth : PlayerHealth;      // Reference to the player's health.
-var playerHealth : int;  
+var playerHealth : int;      // Reference to the player's health.
+//var playerHealth : int;  
 var restartDelay : float = 5f;          // Time to wait before restarting the level
 
 

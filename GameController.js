@@ -80,7 +80,7 @@ function LateUpdate(){  //this didn't work... need to set some kind of time vari
 
 function OnGUI(){
 GUI.skin = skin;
-GUI.Label( new Rect (Screen.width/4, 3, 150, 150), "REP " + PlayerMovement.currentRep);
+GUI.Label( new Rect (Screen.width/5, 3, 400, 200), "Your Reputation " + PlayerMovement.currentRep);  //RIGHT HERE IS WHERE THE rep text is generated!!
 
 }
 

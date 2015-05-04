@@ -16,8 +16,8 @@ var respawnAudio: AudioSource;   //today
 
 
 static var currentRep=3;   //rep replaces hearts.  "rep" is your reputation
-var rep: GameObject;
-static var repBar: GameObject[];
+//var rep: GameObject;
+//static var repBar: GameObject[];
 
 
 static var HugState : boolean = false;
@@ -101,14 +101,14 @@ function StopHugging(){
 }
 
 function Spawn(){
-Debug.Log("Your Current Rep on Spawnstate " + currentRep);
-for(var i: int=0; i < currentRep; i++){
+//Debug.Log("Your Current Rep on Spawnstate " + currentRep);
+//for(var i: int=0; i < currentRep; i++){
+//
+//  Instantiate(rep, Vector3(i*1.5-6.5, 4, 0), Quaternion.identity); 
+//
+//}
 
-  Instantiate(rep, Vector3(i*1.5-6.5, 4, 0), Quaternion.identity); 
-
-}
-
-repBar = GameObject.FindGameObjectsWithTag("Reputation");
+// repBar = GameObject.FindGameObjectsWithTag("Reputation");
 
 }
 
@@ -116,7 +116,7 @@ repBar = GameObject.FindGameObjectsWithTag("Reputation");
 
 static function Damage(){
 
-  Destroy(repBar[currentRep-1]);
+ // Destroy(repBar[currentRep-1]);
   currentRep -= 1;
 
 }

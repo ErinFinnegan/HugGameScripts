@@ -5,13 +5,15 @@ public var PlayerObject: GameObject;
 
 public var playerMovement : PlayerMovement;
 
-var speed :  float= 3;
+var speed :  float= 5;
 //var p : Vector3;
 var waitTime = 0;
 
-var animator : Animator;
+//var animator : Animator;
 
-animator.GetComponent(Animator);
+var KidAnimator : Animator;
+
+//animator.GetComponent(Animator);
 
 //var playerOne: PlayerMovement = GetComponent(PlayerMovement);
 
@@ -22,6 +24,8 @@ animator.GetComponent(Animator);
 function Awake (){
 
 //	playerMovement = GetComponent(PlayerMovement);
+
+     KidAnimator.SetBool("HugBack", false);
 
 }
 
@@ -57,9 +61,9 @@ waitTime = Time.time;
 
 	if(this.transform.position[0] >= -0.5 && this.transform.position[0] <= 1 && PlayerMovement.HugState == true ){
 	//&& playerOne.HugState == true
-	  animator.SetBool("GotHug", true);
+//	  animator.SetBool("GotHug", true);
 	} else {
-		animator.SetBool("GotHug", false);
+//		animator.SetBool("GotHug", false);
 	}
 			
  }	
