@@ -72,7 +72,7 @@ if(GotAHug == true){  //this is the working code
   RepFunction();
  //     KidAnimator.SetBool("HugBack", false);
  // animator.SetBool("GotHug", false);
-  Destroy(gameObject);
+  Destroy(gameObject, 3);
   PlayerMovement.HugState = false;
   }  
   
@@ -82,7 +82,7 @@ if(this.transform.position.x > 13){
 //  GetComponent(GameController).KidTimer = 0;
 //  Debug.Log("Right before Rep gets called");
   RepFunction();
-  Destroy(gameObject);
+  Destroy(gameObject, 3);
   PlayerMovement.HugState = false;
  // animator.SetBool("GotHug", false);
   }  
