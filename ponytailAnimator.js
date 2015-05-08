@@ -17,7 +17,11 @@ function Update () {
 
 if(KidMovement.GotAHug == true){
 
-girlAnimator.SetBool("HugBack", true);
+ girlAnimator.SetBool("HugBack", true);
+ 
+// GetComponent(HugBackIsVisible).SpawnHugBack();
+ 
+
 }
 
 else{

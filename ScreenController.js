@@ -1,12 +1,23 @@
 ﻿#pragma strict
 
 
-var onoff : boolean; 
-var screenObject : GameObject;
+//var onoff : boolean; 
+var LoseScreen : GameObject;
+var WinScreen : GameObject;
+var LoseScreen2 : GameObject;
+var WinScreen2 : GameObject;
+var GameSelectScreen : GameObject;
 
-//function Start () {
 
-//}
+
+function Start () {
+  LoseScreen.SetActive(false); 
+  WinScreen.SetActive(false); 
+  LoseScreen2.SetActive(false); 
+  WinScreen2.SetActive(false); 
+  GameSelectScreen.SetActive(false); 
+    
+}
 
 
 function Update () { 
@@ -14,12 +25,24 @@ function Update () {
 
 if (GetComponent(PlayerMovement).currentRep < 0){
 //	onoff == true;
-  	screenObject.SetActive(true); 
+  	LoseScreen.SetActive(true); 
     
     } else {
     
  //   onoff == false;
-    screenObject.SetActive(false); 
+    LoseScreen.SetActive(false); 
+       
+    }
+    
+    
+    if (GetComponent(PlayerMovement).currentRep > 9000){
+//	onoff == true;
+  	WinScreen.SetActive(true); 
+    
+    } else {
+    
+ //   onoff == false;
+    WinScreen.SetActive(false); 
        
     }
     

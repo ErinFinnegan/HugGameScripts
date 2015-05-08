@@ -15,15 +15,15 @@ function Start () {
 function Update () {
 
  Debug.Log("This started");
-		if (Input.GetKey (KeyCode.LeftArrow)) {
+		if (Input.GetKey (KeyCode.Alpha1) || Input.GetKey (KeyCode.Alpha2) || Input.GetKey (KeyCode.Alpha3) || Input.GetKey (KeyCode.Alpha4)  || Input.GetKey (KeyCode.Alpha5)   || Input.GetKey (KeyCode.Alpha6)) {
 		//	Debug.Log("up arrow key is held down");
-		  Application.LoadLevel("Main");
+		  Application.LoadLevel("GummyMain");
 			
 			}
 
-		if (Input.GetKey (KeyCode.RightArrow)) {
+		if (Input.GetKey (KeyCode.RightArrow) || Input.GetKey (KeyCode.LeftArrow)) {
 		//	Debug.Log("down arrow key is held down");
-		Application.LoadLevel("May3rd");
+		Application.LoadLevel("May7th");
 	
 	}
  } 

@@ -54,7 +54,7 @@ function ColorChanging(){
  newColor = colorD;
   //	Debug.Log("You hit 2");
  }
-  light.color = Color.Lerp(light.color, newColor, Time.time);  //2 is smoothing
+ // light.color = Color.Lerp(light.color, newColor, Time.time);  //2 is smoothing
 
 
 }

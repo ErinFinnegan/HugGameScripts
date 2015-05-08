@@ -39,7 +39,7 @@ transform.Translate(Vector3.right* 0.5);
 
 	if(this.transform.position[0] >= -0.5 && this.transform.position[0] <= 1 && PlayerMovement.HugState == true ){
 	//&& playerOne.HugState == true
-	Debug.Log("You hugged this person!!");
+//	Debug.Log("You hugged this person!!");
 		GotAHug = true;
 //	        KidAnimator.SetBool("HugBack", true);
 //	} else {
@@ -111,27 +111,27 @@ if(this.transform.position.x > 13){
 
 
 function RepFunction(){
-  Debug.Log("Rep is called who wants hugs? " + LikesHugs);
+//  Debug.Log("Rep is called who wants hugs? " + LikesHugs);
   if (LikesHugs == true && GotAHug == true){
-      Debug.Log("This person loves hugs and got one CurrentRep " + GetComponent(PlayerMovement).currentRep);
+ //     Debug.Log("This person loves hugs and got one CurrentRep " + GetComponent(PlayerMovement).currentRep);
       GetComponent(PlayerMovement).currentRep += 1;
       
   }
  // else { // this did not work as an else statement!!
  
  if (LikesHugs == false && GotAHug == false){
-   	 Debug.Log("This person hates hugs and was glad not to be hugged. CurrentRep " + GetComponent(PlayerMovement).currentRep);
+//   	 Debug.Log("This person hates hugs and was glad not to be hugged. CurrentRep " + GetComponent(PlayerMovement).currentRep);
    	 GetComponent(PlayerMovement).currentRep += 1;
    	 //PlayerMovement.Damage();
   }
   if (LikesHugs == true && GotAHug == false){
-      Debug.Log("This person wanted a hug and didn't get one " + GetComponent(PlayerMovement).currentRep);
+//      Debug.Log("This person wanted a hug and didn't get one " + GetComponent(PlayerMovement).currentRep);
       GetComponent(PlayerMovement).currentRep -= 1;
       
   }
   
  if (LikesHugs == false && GotAHug == true){
-   	 Debug.Log("This person hates hugs and you gave them one anyway. CurrentRep " + GetComponent(PlayerMovement).currentRep);
+//   	 Debug.Log("This person hates hugs and you gave them one anyway. CurrentRep " + GetComponent(PlayerMovement).currentRep);
    	 GetComponent(PlayerMovement).currentRep -= 1;
    	 //PlayerMovement.Damage();
   }
