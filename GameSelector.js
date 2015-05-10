@@ -3,10 +3,16 @@
 //var select1 : KeyCode;
 //var select2 : KeyCode;
 
+//var currentKey : KeyCode;
+//var lastKey : KeyCode;
 
 
 function Start () {
+
 //
+
+// currectKey = the key pressed when this launches
+
 // select1 = KeyCode.LeftArrow;
 // select2 = KeyCode.RightArrow;
 //
@@ -14,8 +20,13 @@ function Start () {
 
 function Update () {
 
- Debug.Log("This started");
-		if (Input.GetKey (KeyCode.Alpha1) || Input.GetKey (KeyCode.Alpha2) || Input.GetKey (KeyCode.Alpha3) || Input.GetKey (KeyCode.Alpha4)  || Input.GetKey (KeyCode.Alpha5)   || Input.GetKey (KeyCode.Alpha6)) {
+//currentKey = Input.GetKey();
+//Debug.Log(currentKey);
+
+// Debug.Log("This started");
+
+ // if (currentKey != lastKey)
+    if (Input.GetKey (KeyCode.Alpha6)) {
 		//	Debug.Log("up arrow key is held down");
 		  Application.LoadLevel("GummyMain");
 			
@@ -26,4 +37,7 @@ function Update () {
 		Application.LoadLevel("May7th");
 	
 	}
- } 
+	
+}
+//   }
+// } 

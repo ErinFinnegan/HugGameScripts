@@ -15,7 +15,7 @@ static var damageAudio: AudioSource;  //today
 var respawnAudio: AudioSource;   //today
 
 
-static var currentRep=3;   //rep replaces hearts.  "rep" is your reputation
+static var currentRep=300;   //rep replaces hearts.  "rep" is your reputation
 //var rep: GameObject;
 //static var repBar: GameObject[];
 

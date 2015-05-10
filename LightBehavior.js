@@ -39,22 +39,22 @@ function ColorChanging(){
  
  if(Input.GetKey(KeyCode.Alpha1)) { 
  newColor = colorA;
- //	Debug.Log("You hit 1");
+ 	Debug.Log("You hit 1");
  }
  if(Input.GetKey(KeyCode.Alpha2)){ 
  newColor = colorB;
-  //	Debug.Log("You hit 2");
+  	Debug.Log("You hit 2");
  }
  
   if(Input.GetKey(KeyCode.Alpha3)) { 
  newColor = colorC;
- //	Debug.Log("You hit 1");
+ 	Debug.Log("You hit 3");
  }
  if(Input.GetKey(KeyCode.Alpha4)){ 
  newColor = colorD;
-  //	Debug.Log("You hit 2");
+  	Debug.Log("You hit 4");
  }
- // light.color = Color.Lerp(light.color, newColor, Time.time);  //2 is smoothing
+  light.color = Color.Lerp(light.color, newColor, Time.time);  //2 is smoothing
 
 
 }

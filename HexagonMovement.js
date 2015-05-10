@@ -10,7 +10,7 @@
 var moveLeft : KeyCode;
 var moveRight : KeyCode;
 var jump : KeyCode;
-var speed : float = 10;
+//var speed : float = 10;
 
 var zRotation : float = 5.0;
 
@@ -60,12 +60,12 @@ orangeBoolean = false;
 //Debug.Log("purple");
 
 if ((yellowBoolean==true || purpleBoolean==true) && (GummyController.purpleBearBoolean==true || GummyController.yellowBearBoolean==true)){
-Debug.Log("CORRECT1");
+//Debug.Log("CORRECT1");
 purpleBoolean=false;
 GummyController.Score();
 }else{
-Debug.Log("INCORRECT1");
-//GummyController.Fail();
+//Debug.Log("INCORRECT1");
+GummyController.Fail();
 }
 
 
@@ -89,15 +89,15 @@ yellowBoolean = false;
 blueBoolean = false;
 orangeBoolean = false;
 YELLOWBoolean= true;
-Debug.Log("YELLOWBear");
+//Debug.Log("YELLOWBear");
 if (YELLOWBoolean == true && GummyController.YELLOWBearBoolean == true){
 GummyController.Score();
-	Debug.Log("CORRECT2");
+	//Debug.Log("CORRECT2");
 	YELLOWBoolean = false;
 	
 }else{
-Debug.Log("INCORRECT2");
-//GummyController.Fail();
+//Debug.Log("INCORRECT2");
+GummyController.Fail();
 }
 
 
@@ -116,13 +116,13 @@ orangeBoolean = true;
 
 //Debug.Log("green");
 if ((blueBoolean==true || orangeBoolean==true) && (GummyController.blueBearBoolean==true || GummyController.orangeBearBoolean==true)){
-Debug.Log("CORRECT3");
+//Debug.Log("CORRECT3");
 GummyController.Score();
 blueBoolean=false;
 orangeBoolean=false;
 }else{
-Debug.Log("INCORRECT3");
-//GummyController.Fail();
+//Debug.Log("INCORRECT3");
+GummyController.Fail();
 }
 
 
@@ -141,12 +141,12 @@ orangeBoolean = false;
 
 //Debug.Log("yellow");
 if (purpleBoolean==true && GummyController.purpleBearBoolean==true){
-Debug.Log("CORRECT4");
+//Debug.Log("CORRECT4");
 GummyController.Score();
 purpleBoolean=false;
 }else{
-Debug.Log("INCORRECT4");
-//GummyController.Fail();
+//Debug.Log("INCORRECT4");
+GummyController.Fail();
 }
 
 }
@@ -163,13 +163,13 @@ blueBoolean = false;
 orangeBoolean = false;
 //Debug.Log("blue");
 if ((greenBoolean==true || redBoolean==true) && (GummyController.redBearBoolean==true || GummyController.greenBearBoolean==true)){
-Debug.Log("CORRECT5");
+//Debug.Log("CORRECT5");
 GummyController.Score();
 greenBoolean=false;
 redBoolean=false;
 }else{
-Debug.Log("INCORRECT5");
-//GummyController.Fail();
+//Debug.Log("INCORRECT5");
+GummyController.Fail();
 }
 }
 if (Input.GetKeyDown ('6')){
@@ -183,14 +183,14 @@ yellowBoolean = false;
 blueBoolean = false;
 orangeBoolean = false;
 
-Debug.Log("orange");
+//Debug.Log("orange");
 if(orangeBoolean==true && GummyController.orangeBearBoolean==true){
-Debug.Log("CORRECT6");
+//Debug.Log("CORRECT6");
 GummyController.Score();
 orangeBoolean=false;
 }else{
-Debug.Log("INCORRECT6");
-//GummyController.Fail();
+//Debug.Log("INCORRECT6");
+GummyController.Fail();
 }
 }
 

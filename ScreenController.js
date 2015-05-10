@@ -8,6 +8,8 @@ var LoseScreen2 : GameObject;
 var WinScreen2 : GameObject;
 var GameSelectScreen : GameObject;
 
+var GameOverTimer: int;
+
 
 
 function Start () {
@@ -16,6 +18,8 @@ function Start () {
   LoseScreen2.SetActive(false); 
   WinScreen2.SetActive(false); 
   GameSelectScreen.SetActive(false); 
+  
+  GameOverTimer = 0;
     
 }
 
@@ -23,21 +27,35 @@ function Start () {
 function Update () { 
 
 
-if (GetComponent(PlayerMovement).currentRep < 0){
+if (GetComponent(PlayerMovement).currentRep < 0 || GetComponent(GummyController).score < 0){
 //	onoff == true;
-  	LoseScreen.SetActive(true); 
+  	LoseScreen2.SetActive(true);
+  	
+  	GameOverTimer = GameOverTimer + 1;
     
     } else {
     
  //   onoff == false;
-    LoseScreen.SetActive(false); 
+    LoseScreen2.SetActive(false); 
+       
+    }
+    
+ if(GameOverTimer > 300){
+
+  LoseScreen2.SetActive(true);
+ 
+   } else {
+    
+    LoseScreen2.SetActive(false); 
        
     }
     
     
-    if (GetComponent(PlayerMovement).currentRep > 9000){
+    if (GetComponent(PlayerMovement).currentRep > 1000){
 //	onoff == true;
   	WinScreen.SetActive(true); 
+  	
+  	GameOverTimer = GameOverTimer + 1;
     
     } else {
     
@@ -45,6 +63,11 @@ if (GetComponent(PlayerMovement).currentRep < 0){
     WinScreen.SetActive(false); 
        
     }
-    
+//   Debug.Log("GameOverTimer " + GameOverTimer);
+   
+   if (GameOverTimer > 300){
+   	Application.LoadLevel("GameSelect");
+   	GetComponent(PlayerMovement).currentRep = 300;
+   }
 }
 

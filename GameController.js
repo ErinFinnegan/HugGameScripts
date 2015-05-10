@@ -9,6 +9,8 @@ static var KidTimer: int;
 //var whatTimeIsIt: int;
 var scoreText : GUIText;
 
+static var IstheGameOver : boolean;
+
 var skin : GUISkin;
 
 function Start () {
@@ -16,6 +18,7 @@ function Start () {
 
 spawnKid();
 //UpdateRep();
+ IstheGameOver = false;
 
 
 
@@ -79,8 +82,8 @@ function LateUpdate(){  //this didn't work... need to set some kind of time vari
 }
 
 function OnGUI(){
-GUI.skin = skin;
-GUI.Label( new Rect (Screen.width/5, 3, 400, 200), "Your Reputation " + PlayerMovement.currentRep);  //RIGHT HERE IS WHERE THE rep text is generated!!
+  GUI.skin = skin;
+  GUI.Label( new Rect (Screen.width/5, 3, 400, 200), "Your Reputation " + PlayerMovement.currentRep);  //RIGHT HERE IS WHERE THE rep text is generated!!
 
 }
 
@@ -90,9 +93,9 @@ function AddRep (newRepValue : int) {
 }
 
 
-function UpdateScore () {
-    scoreText.text = "Reputation: " + GetComponent(PlayerMovement).currentRep;
-}
+//function UpdateScore () {
+   // scoreText.text = "Reputation: " + GetComponent(PlayerMovement).currentRep;
+//}
 
 //function UpdateRep() {
 //    repText.text = "Score: " + currentRep;
