@@ -28,10 +28,25 @@ animator.GetBool("HugState");
 animator.GetComponent(Animator);
 animator.GetComponentInChildren(Animator);
 
+var newColor : Color;
+//private var block;
+//var srColor : renderer.material.color;
+//var srColor : gameObject.GetComponent(SpriteRenderer).color;
+//SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>(); 
+
 
 function Start () {
 
+//     GetComponent<SpriteRenderer>().color = Color.red;
+//	newColor = newColor.white;
+
+    gameObject.GetComponent(SpriteRenderer).color = newColor.white;  //this actually worked!!
+    newColor = Color.white;
+	
+  //renderer = gameObject.GetComponent(SpriteRenderer);
+//	block = new MaterialPropertyBlock();
 	Spawn();
+
 	//  Debug.Log("HugState on Spawn = " + HugState);
 	  
 //	   WhoWantsHug = GameObject.FindGameObjectsWithTag("LikesHugs").Length;
@@ -43,32 +58,17 @@ function Update () {
 
 //var currentRep=10; 
 
+ gameObject.GetComponent(SpriteRenderer).color = newColor;
 
-if(Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow)){
- Hug();
-} else {
- StopHugging();
-}
+ //if(Input.GetKey(KeyCode.Alpha1) || Input.GetKey(KeyCode.Alpha1) || Input.GetKey(KeyCode.Alpha2) || Input.GetKey(KeyCode.Alpha3) || Input.GetKey(KeyCode.Alpha4))  {
+   ColorChanging();
+ //}
 
-//if(Input.GetKeyUp(moveLeft) && Input.GetKeyUp(moveRight)){
-// StopHugging();
-//}
-
-//Debug.Log("Your Current Rep is " + currentRep);
-
-// switch(HugState){
-// 
-//   case true:
-////   	 Debug.Log("HugState is case true");
-//   	 animator.SetBool("HugState", true);
-//   	 break;
-//   	case false:
-//   	   	 animator.SetBool("HugState", false);
-//   	   	 //StopHugging();
-////	  Debug.Log("HugState is case false");
-//      break;
-//   }
-
+ if(Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow)){
+   Hug();
+ } else {
+  StopHugging();
+ }
 
 
 
@@ -121,3 +121,44 @@ static function Damage(){
 
 }
 
+
+
+function ColorChanging(){
+ 
+ //SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>(); 
+ 
+ var colorA = Color.white;
+ var colorB = Color.red;
+ var colorC = Color.gray;
+ var colorD = Color.blue;
+ 
+ //default??
+  //gameObject.GetComponent(SpriteRenderer).color = newColor.white; 
+ 
+ if(Input.GetKey(KeyCode.Alpha1)) { 
+   newColor = Color.white;
+// 	Debug.Log("You hit 1");
+//    block.SetColor("_Color", colorA);
+
+ }
+ if(Input.GetKey(KeyCode.Alpha2)){ 
+ newColor = Color.red;
+//  	Debug.Log("You hit 2");
+ }
+ 
+  if(Input.GetKey(KeyCode.Alpha3)) { 
+ newColor = Color.black;
+ //	Debug.Log("You hit 3");
+ }
+ if(Input.GetKey(KeyCode.Alpha4)){ 
+ newColor = Color.blue;
+//  	Debug.Log("You hit 4");
+ }
+ 
+//   block.newColor("_Color", Color.red);
+
+//  block.SetColor("_Color", Color.red);
+  //srColor.color = Color.Lerp(light.color, newColor, Time.time);  //2 is smoothing
+
+
+}

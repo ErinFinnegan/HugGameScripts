@@ -34,7 +34,7 @@ function Update () {
 
 		if (Input.GetKey (KeyCode.RightArrow) || Input.GetKey (KeyCode.LeftArrow)) {
 		//	Debug.Log("down arrow key is held down");
-		Application.LoadLevel("May7th");
+		Application.LoadLevel("May7th 10");
 	
 	}
 	

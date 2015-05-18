@@ -34,7 +34,6 @@ laserAudio = GetComponent(AudioSource);
 
 
 
-
 function Update ()
 {
 
@@ -65,7 +64,7 @@ purpleBoolean=false;
 GummyController.Score();
 }else{
 //Debug.Log("INCORRECT1");
-GummyController.Fail();
+//GummyController.Fail();
 }
 
 
@@ -97,7 +96,7 @@ GummyController.Score();
 	
 }else{
 //Debug.Log("INCORRECT2");
-GummyController.Fail();
+//GummyController.Fail();
 }
 
 
@@ -122,7 +121,7 @@ blueBoolean=false;
 orangeBoolean=false;
 }else{
 //Debug.Log("INCORRECT3");
-GummyController.Fail();
+//GummyController.Fail();
 }
 
 
@@ -146,7 +145,7 @@ GummyController.Score();
 purpleBoolean=false;
 }else{
 //Debug.Log("INCORRECT4");
-GummyController.Fail();
+//GummyController.Fail();
 }
 
 }
@@ -169,7 +168,7 @@ greenBoolean=false;
 redBoolean=false;
 }else{
 //Debug.Log("INCORRECT5");
-GummyController.Fail();
+//GummyController.Fail();
 }
 }
 if (Input.GetKeyDown ('6')){
@@ -190,9 +189,12 @@ GummyController.Score();
 orangeBoolean=false;
 }else{
 //Debug.Log("INCORRECT6");
-GummyController.Fail();
+//GummyController.Fail();
 }
 }
+
+
+
 
 
 

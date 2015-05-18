@@ -26,6 +26,12 @@ spawnKid();
 
 function Update(){
 
+if (Input.GetKey(KeyCode.Escape)){
+//	ScreenController.GameOverTimer = 0;
+   	GetComponent(PlayerMovement).currentRep = 300;
+    Application.LoadLevel("GameSelect");
+}
+
 HuggeesOnScreen = (GameObject.FindGameObjectsWithTag("LikesHugs").Length) + (GameObject.FindGameObjectsWithTag("DoesNotLikeHugs").Length);
 
 KidTimer = KidTimer + 1;
