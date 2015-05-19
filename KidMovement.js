@@ -1,5 +1,7 @@
 ﻿#pragma strict
 
+var audio1 : AudioClip; 
+var audio2 : AudioClip; 
 
 static var KidTimer: int;
 
@@ -115,6 +117,8 @@ function RepFunction(){
   if (LikesHugs == true && GotAHug == true){
  //     Debug.Log("This person loves hugs and got one CurrentRep " + GetComponent(PlayerMovement).currentRep);
       GetComponent(PlayerMovement).currentRep += 1;
+ //     audio.PlayOneShot(audio1);
+      //audio1.Play();
       
   }
  // else { // this did not work as an else statement!!
@@ -123,16 +127,21 @@ function RepFunction(){
 //   	 Debug.Log("This person hates hugs and was glad not to be hugged. CurrentRep " + GetComponent(PlayerMovement).currentRep);
    	 GetComponent(PlayerMovement).currentRep += 1;
    	 //PlayerMovement.Damage();
+//   	 audio.PlayOneShot(audio1);
+   	// audio1.PlayOneShot;
   }
   if (LikesHugs == true && GotAHug == false){
 //      Debug.Log("This person wanted a hug and didn't get one " + GetComponent(PlayerMovement).currentRep);
       GetComponent(PlayerMovement).currentRep -= 1;
-      
+      //audio2.Play();
+//      audio.PlayOneShot(audio2);
   }
   
  if (LikesHugs == false && GotAHug == true){
 //   	 Debug.Log("This person hates hugs and you gave them one anyway. CurrentRep " + GetComponent(PlayerMovement).currentRep);
    	 GetComponent(PlayerMovement).currentRep -= 1;
    	 //PlayerMovement.Damage();
+   	 //audio2.Play();
+   //	 audio.PlayOneShot(audio2);
   }
  }

@@ -3,6 +3,8 @@
 
 var gothKid: GameObject;
 var ponytailGirl: GameObject;
+
+
 static var DoTheyLikeHugs;
 var HuggeesOnScreen: int;
 static var KidTimer: int;
@@ -67,6 +69,7 @@ if(randInt > 2){
 else{
 
 	Instantiate(ponytailGirl, Vector3(-13, 0, 0), Quaternion.identity);
+
 	
 	DoTheyLikeHugs = this.ponytailGirl.tag;
 	 KidMovement.LikesHugs = true;
