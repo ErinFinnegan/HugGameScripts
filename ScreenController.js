@@ -44,6 +44,7 @@ if (GetComponent(PlayerMovement).currentRep < -10){
  if(GameOverTimer > 150){
 
   LoseScreen.SetActive(true);
+  
  
    } else {
     
@@ -57,6 +58,8 @@ if (GetComponent(PlayerMovement).currentRep < -10){
   	WinScreen.SetActive(true); 
   	
   	GameOverTimer = GameOverTimer + 1;
+  	
+
     
     } else {
     
@@ -70,5 +73,21 @@ if (GetComponent(PlayerMovement).currentRep < -10){
    	Application.LoadLevel("GameSelect");
    	GetComponent(PlayerMovement).currentRep = 300;
    }
-}
+// if (GameOverTimer > 200){  //wait 200 millis to let any key go back to Game Select
+//  if(Input.anyKey){
+//  	Application.LoadLevel("GameSelect");
+//   }
+//  }
+  
+  if(GameOverTimer > 300){
+  Debug.Log("One of the screens is up");
+   if(Input.anyKey){
+   	Application.LoadLevel("GameSelect");
+    }
+  
+  }
+  
+ 
+  
+}  //end of update loop
 
