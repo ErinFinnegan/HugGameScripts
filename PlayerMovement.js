@@ -70,9 +70,12 @@ function Update () {
   StopHugging();
  }
 
+ if(Input.GetKey(KeyCode.C)) {
+   currentRep = 9000;
+ 
+ }
 
-
-}
+} //end of Update
 
 function Hug(){
  animator.SetBool("HugState", true);

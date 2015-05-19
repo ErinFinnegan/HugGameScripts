@@ -35,6 +35,7 @@ function Update () {
 		if (Input.GetKey (KeyCode.RightArrow) || Input.GetKey (KeyCode.LeftArrow)) {
 		//	Debug.Log("down arrow key is held down");
 		Application.LoadLevel("May18th");
+	    GetComponent(ScreenController).GameOverTimer = 0;
 	
 	}
 	
