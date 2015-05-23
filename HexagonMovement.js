@@ -21,6 +21,7 @@ var yellowBoolean: boolean = false;
 var blueBoolean: boolean = false;
 var orangeBoolean: boolean = false;
 var YELLOWBoolean: boolean = false;
+var BLUEBearFreebieBoolean: boolean = false;
 
 //var redBoolean : boolean = false;
 //var greenBoolean : boolean = false;
@@ -89,7 +90,7 @@ blueBoolean = false;
 orangeBoolean = false;
 YELLOWBoolean= true;
 //Debug.Log("YELLOWBear");
-if (YELLOWBoolean == true && GummyController.YELLOWBearBoolean == true){
+if (YELLOWBoolean == true || GummyController.YELLOWBearBoolean == true){
 GummyController.Score();
 	//Debug.Log("CORRECT2");
 	YELLOWBoolean = false;
@@ -160,12 +161,14 @@ greenBoolean= true;
 yellowBoolean = false;
 blueBoolean = false;
 orangeBoolean = false;
+BLUEBearFreebieBoolean =true;
 //Debug.Log("blue");
-if ((greenBoolean==true || redBoolean==true) && (GummyController.redBearBoolean==true || GummyController.greenBearBoolean==true)){
+if ((greenBoolean==true || redBoolean==true || BLUEBearFreebieBoolean== true) && (GummyController.redBearBoolean==true || GummyController.greenBearBoolean==true || GummyController.BLUEBearFreebieBoolean==true)){
 //Debug.Log("CORRECT5");
 GummyController.Score();
 greenBoolean=false;
 redBoolean=false;
+BLUEBearFreebieBoolean =false;
 }else{
 //Debug.Log("INCORRECT5");
 //GummyController.Fail();

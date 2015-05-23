@@ -10,6 +10,8 @@ var GameOverTimer: int;
 
 
 
+
+
 function Start () {
   LoseScreen.SetActive(false); 
   WinScreen.SetActive(false); 
@@ -25,11 +27,12 @@ function Update () {
 if (GetComponent(GummyController).timer == 0){
  //if (GetComponent(GummyController).timer == 0  && GetComponent(GummyController).score<=0){
  //	Debug.Log("Instructions activate!!!!!");
+
     InstructionScreen.SetActive(false);   
  }
 
 
-if (GetComponent(GummyController).score < 0	){
+if (GetComponent(GummyController).score <10 && GummyController.gummytimer==0 	){
 //	onoff == true;
   	LoseScreen.SetActive(true);
   	
@@ -43,13 +46,19 @@ if (GetComponent(GummyController).score < 0	){
     }
     
  
+ //
+ //
     
-    
-    if (GetComponent(GummyController).score > 15){
+//    if( GummyController.winscreen==true){
+   //if (GetComponent(GummyController).winscreen == true){
+   if ( GummyController.score==10 && GummyController.gummytimer==0){
 //	onoff == true;
+
   	WinScreen.SetActive(true); 
+  	//Application.LoadLevel("GummyWINSCREEN");
   	
   	GameOverTimer = GameOverTimer + 1;
+  	
     
     } else {
     

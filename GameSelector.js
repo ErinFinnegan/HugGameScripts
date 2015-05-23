@@ -11,6 +11,8 @@ function Start () {
 
 //
 
+
+
 // currectKey = the key pressed when this launches
 
 // select1 = KeyCode.LeftArrow;
@@ -19,7 +21,10 @@ function Start () {
 }
 
 function Update () {
-
+   GetComponent(GummyController).score = 0;
+   GetComponent(GummyController).gummytimer = 2800;
+   GetComponent(PlayerMovement).currentRep = 300;
+//   GetComponent(ScreenController).GameOverTimer = 0;
 //currentKey = Input.GetKey();
 //Debug.Log(currentKey);
 
